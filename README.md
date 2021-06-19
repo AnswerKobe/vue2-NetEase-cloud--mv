@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # vue-mv-333
 
 ## Project setup
@@ -15,5 +14,3 @@ npm run serve
 ```
 npm run build
 ```
-
-### Customize configuration
