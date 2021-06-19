@@ -17,7 +17,3 @@ npm run build
 ```
 
 ### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-=======
-# vue2-NetEase-cloud--mv
-Netease cloud MV based on Vue
