@@ -1,32 +1,44 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <tar-bar />
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import tarBar from "components/tarBar333";
+export default {
+  components: {
+    tarBar,
+  },
+  data() {
+    return {
+      showBack: false,
+      active: 0,
+      icon: {
+        active: "https://img01.yzcdn.cn/vant/user-active.png",
+        inactive: "https://img01.yzcdn.cn/vant/user-inactive.png",
+      },
+    };
+  },
+  created() {
+    //判断当前是否为首页，如果是则显示
+    this.showBack = this.$route.path !== "/";
+  },
+  watch: {
+    //监听当前路由是否发现变化
+    "$route.path"(newVal) {
+      this.showBack = newVal !== "/";
+    },
+  },
+  methods: {
+    goBack() {
+      this.$router.go(-1);
+      //  this.$router.back();
+    },
+  },
+};
+</script>
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+<style lass="scss" scoped>
 </style>
+
